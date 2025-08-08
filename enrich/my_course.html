@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>My Courses | Enrich</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
+  <style> body{background:#f8f9fa;} .container{margin-top:110px;} .course-card{background:#fff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.06);padding:16px;margin-bottom:12px;} .progress{height:8px}</style>
+</head>
+<body>
+  <header class="main-header clearfix" role="header">
+    <div class="logo"><a href="index.html"><em>ENRICH</em></a></div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="my_course.html">My Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#section6">Contact</a></li>
+        <li><a href="#" title="Search"><i class="fa fa-search"></i></a></li>
+        <li><a href="#" title="Cart"><i class="fa fa-shopping-cart"></i></a></li>
+        <li><a href="login.html" class="login-btn"><i class="fa fa-user" title="Login/Signup"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item active">My Courses</li></ol></nav>
+    <h3>My Courses</h3>
+    <div id="my-courses"></div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p>© 2025 Enrich. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms</a> | 
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/site-search.js"></script>
+  <script src="assets/js/auth-cart.js"></script>
+  <script>
+    $(function(){
+      const AC = window.EnrichAuthCart; AC.updateNavAuth();
+      const user = AC.getUser(); if(!user){ window.location.href='login.html'; return; }
+      const list = AC.getEnrolments();
+      const $box = $('#my-courses');
+      if(!list.length){ $box.html('<div class="alert alert-info">You are not enrolled in anything yet. <a href="course.html">Browse courses</a>.</div>'); return; }
+      const rows = list.map(c=>{
+        const progress = c.progress || 0; const deadline = c.deadline || '2025-12-31';
+        const page = (c.title||'').toLowerCase().includes('full stack web development with javascript') ? 'full.html' : (c.page || 'course.html');
+        return `<div class="course-card" data-id="${c.id}"><div class="d-flex align-items-center mb-2"><img src="${c.image || 'assets/images/courses-01.jpg'}" style="width:84px;height:60px;object-fit:cover;border-radius:6px;margin-right:12px" alt="${c.title}"><div class="flex-grow-1"><div class="d-flex justify-content-between"><strong>${c.title}</strong><span class="text-muted">Deadline: ${deadline}</span></div></div></div><div class="progress my-2"><div class="progress-bar" role="progressbar" style="width:${progress}%"></div></div><div class="d-flex justify-content-between"><span>${progress}% completed</span><div><a class="btn btn-sm btn-outline-danger btn-remove-course mr-2">Remove</a><a class="btn btn-sm btn-primary" href="${page}">Resume</a></div></div></div>`;
+      }).join('');
+      $box.html(rows);
+      $box.on('click', '.btn-remove-course', function(){ const id = $(this).closest('.course-card').data('id'); const remaining = AC.getEnrolments().filter(x=> x.id !== id); AC.saveEnrolments(remaining); location.reload(); });
+    });
+  </script>
+</body>
+</html>
+
+

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Python for Everybody | Enrich</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
+  <style>
+    body{background:#f8f9fa;} .container-fluid{margin-top:110px;} .progress{height:10px}
+    .section-box{background:#fff;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.06);padding:20px;margin-bottom:20px}
+    .course-title{font-size:2.5rem;font-weight:700;color:#1c1d1f;margin-bottom:10px}
+    .course-meta{color:#6a6f73;font-size:14px}
+    .course-meta span{margin-right:20px}
+    .video-container{position:relative;background:#000;border-radius:8px;overflow:hidden}
+    .course-actions{margin:20px 0}
+    .course-actions .btn{margin-right:10px;padding:12px 24px}
+    .learning-points{list-style:none;padding:0}
+    .learning-points li{margin-bottom:10px;padding-left:20px;position:relative}
+    .learning-points li i{position:absolute;left:0;color:#1fbd70}
+    .curriculum-section{margin-bottom:20px;border:1px solid #d1d7dc;border-radius:4px}
+    .section-header{background:#f7f9fa;padding:15px;border-bottom:1px solid #d1d7dc;cursor:pointer}
+    .section-header h5{margin:0;color:#1c1d1f}
+    .section-header span{color:#6a6f73;font-size:14px}
+    .lecture-list{list-style:none;padding:0;margin:0}
+    .lecture-list li{padding:12px 15px;border-bottom:1px solid #f1f1f1;color:#1c1d1f}
+    .lecture-list li:last-child{border-bottom:none}
+    .lecture-list li i{color:#6a6f73;margin-right:8px}
+    .pricing-card{background:#fff;border:1px solid #d1d7dc;border-radius:4px;padding:20px;margin-bottom:20px}
+    .price{font-size:2rem;font-weight:700;color:#1c1d1f}
+    .original-price{text-decoration:line-through;color:#6a6f73;font-size:1.2rem}
+    .discount-badge{background:#f7f9fa;color:#1c1d1f;padding:4px 8px;border-radius:4px;font-size:12px;display:inline-block;margin-left:10px}
+    .course-features{margin:20px 0}
+    .feature{margin-bottom:10px;color:#1c1d1f}
+    .feature i{color:#6a6f73;margin-right:8px}
+    .guarantee{background:#f7f9fa;padding:15px;border-radius:4px;text-align:center;color:#1c1d1f}
+    .guarantee i{color:#1fbd70;margin-right:8px}
+    .instructor-card{background:#fff;border:1px solid #d1d7dc;border-radius:4px;padding:20px}
+    .instructor-info{display:flex;gap:15px;align-items:flex-start}
+    .instructor-stats{font-size:14px;color:#6a6f73;margin-top:10px}
+    .instructor-stats span{display:block;margin-bottom:5px}
+  </style>
+  </head>
+<body>
+  <header class="main-header clearfix" role="header">
+    <div class="logo"><a href="index.html"><em>ENRICH</em></a></div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="index.html#section4">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#section6">Contact</a></li>
+        <li><a href="#" title="Search"><i class="fa fa-search"></i></a></li>
+        <li><a href="#" title="Cart"><i class="fa fa-shopping-cart"></i></a></li>
+        <li><a href="login.html" class="login-btn"><i class="fa fa-user" title="Login/Signup"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container-fluid" style="margin-top:110px;">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="course-content">
+          <div class="course-header mb-4">
+            <h1 class="course-title">Python for Everybody</h1>
+            <div class="course-meta">
+              <span class="rating"><i class="fa fa-star"></i> 4.7 (2,200 ratings)</span>
+              <span class="students">15,800 students enrolled</span>
+              <span class="last-updated">Last updated 12/2024</span>
+            </div>
+          </div>
+          
+          <div class="course-preview mb-4">
+            <div class="video-container">
+              <video id="course-video" controls width="100%" style="border-radius:8px;">
+                <source src="assets/video/python.mp4" type="video/mp4">
+              </video>
+              <div class="progress mt-2">
+                <div id="video-progress" class="progress-bar" role="progressbar" style="width:0%"></div>
+              </div>
+              <div class="text-right small" id="progress-text">0% completed</div>
+            </div>
+          </div>
+
+          <div class="course-actions mb-4">
+            <button class="btn btn-primary btn-lg btn-enroll">Enroll Now</button>
+            <button class="btn btn-outline-secondary btn-lg btn-add-cart">Add to Cart</button>
+            <button class="btn btn-outline-primary btn-lg">Gift this course</button>
+          </div>
+
+          <div class="course-sections">
+            <div class="section-box">
+              <h3>What you'll learn</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <ul class="learning-points">
+                    <li><i class="fa fa-check"></i> Master Python programming fundamentals</li>
+                    <li><i class="fa fa-check"></i> Work with data structures and algorithms</li>
+                    <li><i class="fa fa-check"></i> Build real-world Python applications</li>
+                    <li><i class="fa fa-check"></i> Understand object-oriented programming</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul class="learning-points">
+                    <li><i class="fa fa-check"></i> Handle file operations and databases</li>
+                    <li><i class="fa fa-check"></i> Create web applications with Python</li>
+                    <li><i class="fa fa-check"></i> Learn data analysis and visualization</li>
+                    <li><i class="fa fa-check"></i> Prepare for Python certification exams</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="section-box">
+              <h3>Course content</h3>
+              <div class="content-overview">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span>6 sections • 48 lectures • 15h 45m total length</span>
+                  <button class="btn btn-sm btn-outline-primary">Expand all</button>
+                </div>
+                <div class="course-curriculum">
+                  <div class="curriculum-section">
+                    <div class="section-header">
+                      <h5><i class="fa fa-play-circle"></i> Section 1: Python Basics</h5>
+                      <span>8 lectures • 2h 30min</span>
+                    </div>
+                    <ul class="lecture-list">
+                      <li><i class="fa fa-play-circle"></i> Introduction to Python</li>
+                      <li><i class="fa fa-play-circle"></i> Variables and data types</li>
+                      <li><i class="fa fa-play-circle"></i> Control structures</li>
+                      <li><i class="fa fa-play-circle"></i> Functions and scope</li>
+                    </ul>
+                  </div>
+                  <div class="curriculum-section">
+                    <div class="section-header">
+                      <h5><i class="fa fa-play-circle"></i> Section 2: Data Structures</h5>
+                      <span>10 lectures • 3h 15min</span>
+                    </div>
+                    <ul class="lecture-list">
+                      <li><i class="fa fa-play-circle"></i> Lists and tuples</li>
+                      <li><i class="fa fa-play-circle"></i> Dictionaries and sets</li>
+                      <li><i class="fa fa-play-circle"></i> List comprehensions</li>
+                      <li><i class="fa fa-play-circle"></i> Advanced data manipulation</li>
+                    </ul>
+                  </div>
+                  <div class="curriculum-section">
+                    <div class="section-header">
+                      <h5><i class="fa fa-play-circle"></i> Section 3: Object-Oriented Programming</h5>
+                      <span>12 lectures • 4h 20min</span>
+                    </div>
+                    <ul class="lecture-list">
+                      <li><i class="fa fa-play-circle"></i> Classes and objects</li>
+                      <li><i class="fa fa-play-circle"></i> Inheritance and polymorphism</li>
+                      <li><i class="fa fa-play-circle"></i> Encapsulation and abstraction</li>
+                      <li><i class="fa fa-play-circle"></i> Design patterns</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="section-box">
+              <h3>Requirements</h3>
+              <ul>
+                <li>No prior programming experience required</li>
+                <li>A computer with Python installed</li>
+                <li>Basic computer skills</li>
+                <li>Willingness to learn and practice</li>
+              </ul>
+            </div>
+
+            <div class="section-box">
+              <h3>Description</h3>
+              <p>This comprehensive Python course is designed for beginners and intermediate learners who want to master Python programming. You'll learn everything from basic syntax to advanced concepts like object-oriented programming and web development.</p>
+              <p>By the end of this course, you'll have built several real-world projects including a web scraper, data analysis tools, and a complete web application using Python frameworks.</p>
+            </div>
+
+            <div class="section-box">
+              <h3>Certification & Assessment</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="certification-card" style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                    <h5><i class="fa fa-certificate" style="color: #f5a425;"></i> Take Certification Exam</h5>
+                    <p style="font-size: 14px; color: #6a6f73;">Test your knowledge and earn a professional certificate</p>
+                    <button class="btn btn-primary btn-sm" onclick="takeCertificationExam()">Start Exam</button>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="quiz-card" style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                    <h5><i class="fa fa-question-circle" style="color: #f5a425;"></i> Practice Quizzes</h5>
+                    <p style="font-size: 14px; color: #6a6f73;">Reinforce your learning with interactive quizzes</p>
+                    <button class="btn btn-outline-primary btn-sm" onclick="startQuiz()">Take Quiz</button>
+                  </div>
+                </div>
+              </div>
+              <div class="quiz-progress mt-3" style="display: none;">
+                <h6>Quiz Progress</h6>
+                <div class="progress" style="height: 8px;">
+                  <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                </div>
+                <small class="text-muted">0% completed</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4">
+        <div class="course-sidebar">
+          <div class="pricing-card">
+            <div class="price">₹1,999</div>
+            <div class="original-price">₹2,999</div>
+            <div class="discount-badge">33% off</div>
+            <div class="course-features">
+              <div class="feature"><i class="fa fa-play-circle"></i> 15.75 hours on-demand video</div>
+              <div class="feature"><i class="fa fa-file-text"></i> 48 downloadable resources</div>
+              <div class="feature"><i class="fa fa-infinity"></i> Full lifetime access</div>
+              <div class="feature"><i class="fa fa-mobile"></i> Access on mobile and TV</div>
+              <div class="feature"><i class="fa fa-certificate"></i> Certificate of completion</div>
+            </div>
+            <div class="guarantee">
+              <i class="fa fa-shield-alt"></i> 30-Day Money-Back Guarantee
+            </div>
+          </div>
+          
+          <div class="instructor-card">
+            <h4>Instructor</h4>
+            <div class="instructor-info">
+              <img src="assets/images/author-01.png" alt="Alex Rodriguez" style="width:64px;height:64px;border-radius:50%;object-fit:cover;">
+              <div>
+                <h5>Alex Rodriguez</h5>
+                <p>Data Scientist & Python Expert</p>
+                <div class="instructor-stats">
+                  <span><i class="fa fa-star"></i> 4.7 Instructor Rating</span>
+                  <span><i class="fa fa-award"></i> 15,800 Students</span>
+                  <span><i class="fa fa-play-circle"></i> 8 Courses</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p>© 2025 Enrich. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms</a> | 
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/site-search.js"></script>
+  <script src="assets/js/auth-cart.js"></script>
+  <script>
+    $(function(){
+      const AC = window.EnrichAuthCart; AC.updateNavAuth();
+      const user = AC.getUser(); if(!user){ sessionStorage.setItem('ENRICH_BACK','py.html'); window.location.href='login.html'; return; }
+      const video = document.getElementById('course-video');
+      const title = 'Python for Everybody';
+      const price = 1999;
+      const info = { id:'python-everybody', title, price, isFree:false, page:'py.html', image:'assets/images/courses-01.jpg', pageDetail:'py.html' };
+
+      function markModules(pct){
+        const done = Math.floor((pct||0)/20);
+        const items = document.querySelectorAll('.lecture-list li');
+        items.forEach((li, idx)=>{ li.style.listStyle = 'none'; li.style.position='relative'; if(idx < done){ li.innerHTML = '<i class="fa fa-check" style="color:green;"></i> ' + li.textContent.replace(/^.*?fa-check.*?>\s*/,''); } });
+      }
+
+      function getEnrolled(){
+        const list = AC.getEnrolments();
+        return { list, item: list.find(c=> (c.title||'').toLowerCase() === title.toLowerCase()) };
+      }
+
+      const btnEnroll = document.querySelector('.btn-enroll');
+      const btnCart = document.querySelector('.btn-add-cart');
+
+      let { list, item } = getEnrolled();
+      if(!item){
+        // lock playback
+        video.controls = false; video.pause();
+        const lock = document.createElement('div'); lock.className='alert alert-warning mt-2'; lock.textContent='Unlock this video by enrolling (Enroll Now) or purchasing via cart.'; video.parentElement.appendChild(lock);
+        // local enroll/add-cart handlers
+        if(btnEnroll){ btnEnroll.addEventListener('click', function(e){ e.preventDefault(); sessionStorage.setItem('ENRICH_SELECTED', JSON.stringify(info)); if(!AC.getUser()){ sessionStorage.setItem('ENRICH_BACK','checkout.html'); window.location.href='login.html'; } else { window.location.href='checkout.html'; } }); }
+        if(btnCart){ btnCart.addEventListener('click', function(e){ e.preventDefault(); AC.addToCart(info); }); }
+      } else {
+        // already enrolled
+        if(btnEnroll) btnEnroll.style.display='none';
+        if(btnCart) btnCart.style.display='none';
+        video.controls = true;
+        const pct0 = item.progress || 0; document.getElementById('video-progress').style.width = pct0+'%'; document.getElementById('progress-text').textContent = pct0 + '% completed'; markModules(pct0);
+      }
+
+      video.addEventListener('timeupdate', function(){
+        if(video.duration){
+          const pct = Math.min(100, Math.floor((video.currentTime / video.duration) * 100));
+          document.getElementById('video-progress').style.width = pct+'%';
+          document.getElementById('progress-text').textContent = pct + '% completed';
+          // persist progress
+          ({ list, item } = getEnrolled());
+          if(item){ item.progress = pct; AC.saveEnrolments(list); markModules(pct); }
+        }
+      });
+
+      // Certification and Quiz Functions
+      window.takeCertificationExam = function() {
+        if(!item) {
+          alert('Please enroll in the course first to take the certification exam.');
+          return;
+        }
+        const examQuestions = [
+          {
+            question: "What is Python primarily used for?",
+            options: ["Web development only", "Data science and general programming", "Mobile app development only", "Game development only"],
+            correct: 1
+          },
+          {
+            question: "Which of the following is NOT a Python data type?",
+            options: ["list", "tuple", "array", "dictionary"],
+            correct: 2
+          },
+          {
+            question: "What is the correct way to create a function in Python?",
+            options: ["function myFunction():", "def myFunction():", "create myFunction():", "func myFunction():"],
+            correct: 1
+          },
+          {
+            question: "What does 'pip' stand for in Python?",
+            options: ["Python Install Package", "Package Installer for Python", "Python Interface Program", "Program Install Python"],
+            correct: 1
+          },
+          {
+            question: "Which method is used to add an element to a list in Python?",
+            options: ["add()", "append()", "insert()", "push()"],
+            correct: 1
+          }
+        ];
+        
+        let score = 0;
+        let currentQuestion = 0;
+        
+        function showQuestion() {
+          if(currentQuestion >= examQuestions.length) {
+            const percentage = Math.round((score / examQuestions.length) * 100);
+            if(percentage >= 70) {
+              alert(`Congratulations! You passed the certification exam with ${percentage}%! You can download your certificate.`);
+            } else {
+              alert(`You scored ${percentage}%. You need 70% to pass. Please review the course material and try again.`);
+            }
+            return;
+          }
+          
+          const q = examQuestions[currentQuestion];
+          const answer = prompt(`Question ${currentQuestion + 1}: ${q.question}\n\n1. ${q.options[0]}\n2. ${q.options[1]}\n3. ${q.options[2]}\n4. ${q.options[3]}\n\nEnter your answer (1-4):`);
+          
+          if(answer && parseInt(answer) === q.correct + 1) {
+            score++;
+            alert('Correct!');
+          } else {
+            alert('Incorrect. The correct answer was: ' + q.options[q.correct]);
+          }
+          
+          currentQuestion++;
+          showQuestion();
+        }
+        
+        showQuestion();
+      };
+
+      window.startQuiz = function() {
+        if(!item) {
+          alert('Please enroll in the course first to take quizzes.');
+          return;
+        }
+        
+        const quizQuestions = [
+          {
+            question: "What is a list comprehension in Python?",
+            options: ["A way to create lists using a compact syntax", "A method to sort lists", "A way to delete list elements", "A type of loop"],
+            correct: 0
+          },
+          {
+            question: "What is the purpose of the 'self' parameter in Python classes?",
+            options: ["To create a new instance", "To reference the instance of the class", "To define class variables", "To import modules"],
+            correct: 1
+          },
+          {
+            question: "Which of the following is used to handle exceptions in Python?",
+            options: ["try-except", "if-else", "for-while", "def-return"],
+            correct: 0
+          }
+        ];
+        
+        let quizScore = 0;
+        let quizCurrent = 0;
+        
+        function showQuizQuestion() {
+          if(quizCurrent >= quizQuestions.length) {
+            const percentage = Math.round((quizScore / quizQuestions.length) * 100);
+            alert(`Quiz completed! You scored ${percentage}% (${quizScore}/${quizQuestions.length} correct)`);
+            
+            // Update quiz progress
+            const progressBar = document.querySelector('.quiz-progress .progress-bar');
+            const progressText = document.querySelector('.quiz-progress small');
+            if(progressBar && progressText) {
+              progressBar.style.width = percentage + '%';
+              progressText.textContent = percentage + '% completed';
+              document.querySelector('.quiz-progress').style.display = 'block';
+            }
+            return;
+          }
+          
+          const q = quizQuestions[quizCurrent];
+          const answer = prompt(`Quiz Question ${quizCurrent + 1}: ${q.question}\n\n1. ${q.options[0]}\n2. ${q.options[1]}\n3. ${q.options[2]}\n4. ${q.options[3]}\n\nEnter your answer (1-4):`);
+          
+          if(answer && parseInt(answer) === q.correct + 1) {
+            quizScore++;
+            alert('Correct!');
+          } else {
+            alert('Incorrect. The correct answer was: ' + q.options[q.correct]);
+          }
+          
+          quizCurrent++;
+          showQuizQuestion();
+        }
+        
+        showQuizQuestion();
+      };
+    });
+  </script>
+</body>
+</html>
+
+

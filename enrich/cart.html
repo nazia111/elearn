@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Your Cart | Enrich</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
+  <style>
+    body { background:#f8f9fa; }
+    .cart-container{ margin-top:110px; min-height:60vh; }
+    .cart-item{ background:#fff; border-radius:8px; padding:16px; margin-bottom:12px; display:flex; align-items:center; }
+    .cart-item img{ width:84px; height:60px; object-fit:cover; border-radius:6px; margin-right:12px; }
+    .cart-item .meta{ flex:1; }
+  </style>
+</head>
+<body>
+  <header class="main-header clearfix" role="header">
+    <div class="logo"><a href="index.html"><em>ENRICH</em></a></div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="index.html#section4">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#section6">Contact</a></li>
+        <li><a href="#" title="Search"><i class="fa fa-search"></i></a></li>
+        <li><a href="#" title="Cart"><i class="fa fa-shopping-cart"></i></a></li>
+        <li><a href="login.html" class="login-btn">Login/Signup</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container cart-container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Cart</li>
+      </ol>
+    </nav>
+    <h3>Your Cart</h3>
+    <div id="cart-list"></div>
+    <div class="d-flex justify-content-between align-items-center mt-3">
+      <div id="cart-total" class="h5 mb-0"></div>
+      <div>
+        <button id="btn-clear-cart" class="btn btn-outline-danger mr-2">Clear Cart</button>
+        <a id="btn-proceed" href="checkout.html" class="btn btn-primary">Proceed to Checkout</a>
+      </div>
+    </div>
+  </div>
+
+  <footer style="position:relative; bottom:0; width:100%;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p>© 2025 Enrich. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms</a> | 
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/site-search.js"></script>
+  <script src="assets/js/auth-cart.js"></script>
+  <script>
+    $(function(){
+      const AC = window.EnrichAuthCart;
+      AC.updateNavAuth();
+      function render(){
+        const items = AC.getCart();
+        const $list = $('#cart-list');
+        if(!items.length){ $list.html('<p>Your cart is empty.</p>'); $('#cart-total').text(''); return; }
+        const rows = items.map(i=>`
+          <div class="cart-item" data-id="${i.id}">
+            <img src="${i.image || 'assets/images/courses-01.jpg'}" alt="${i.title}">
+            <div class="meta">
+              <div><strong>${i.title}</strong></div>
+            </div>
+            <div>
+              <span class="mr-3">${i.isFree ? 'Free' : '₹' + (i.price||0).toLocaleString()}</span>
+              <button class="btn btn-sm btn-outline-secondary btn-remove">Remove</button>
+            </div>
+          </div>`).join('');
+        $list.html(rows);
+        const total = items.reduce((s,i)=> s + (i.isFree?0:(i.price||0)), 0);
+        $('#cart-total').text('Total: ' + (total ? ('₹' + total.toLocaleString()) : 'Free'));
+      }
+      render();
+      $(document).on('click', '.btn-remove', function(){ const id = $(this).closest('.cart-item').data('id'); AC.removeFromCart(id); render(); });
+      $('#btn-clear-cart').on('click', function(){ AC.clearCart(); render(); });
+      // Proceed to checkout -> login if not logged in
+      $('#btn-proceed').on('click', function(e){ const user = AC.getUser(); if(!user){ sessionStorage.setItem('ENRICH_BACK','checkout.html'); } });
+    });
+  </script>
+</body>
+</html>
+
+

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Data Science Courses - Enrich">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <title>Data Science Courses | Enrich</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/lightbox.css">
+  <style>
+    body { background: #f8f9fa; }
+    .webdev-main-content { margin-top: 100px; }
+    .webdev-sidebar { background:#fff; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,.05); padding:24px 18px; margin-bottom:30px; position:sticky; top:110px; }
+    .webdev-sidebar h5 { font-size:16px; font-weight:700; margin-bottom:18px; }
+    .webdev-sidebar ul { list-style:none; padding:0; margin:0; }
+    .webdev-sidebar ul li { margin-bottom:10px; }
+    .webdev-sidebar ul li a { color:#333; font-size:14px; text-decoration:none; transition:color .2s; }
+    .webdev-sidebar ul li a:hover { color:#f5a425; }
+    .webdev-filter-bar { background:#fff; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,.05); padding:18px; margin-bottom:24px; display:flex; flex-wrap:wrap; align-items:center; gap:16px; justify-content:space-between; position:relative; z-index:2; }
+    .webdev-filter-bar .form-control, .webdev-filter-bar .custom-select { max-width:180px; display:inline-block; margin-right:10px; }
+    .webdev-category-bar { display:flex; overflow-x:auto; gap:12px; margin-bottom:24px; padding-bottom:8px; scrollbar-width:thin; }
+    .webdev-category-pill { background:#fff; border:1.5px solid #f5a425; color:#f5a425; border-radius:20px; padding:7px 22px; font-size:14px; font-weight:600; cursor:pointer; transition:all .2s; white-space:nowrap; }
+    .webdev-category-pill.active, .webdev-category-pill:hover { background:#f5a425; color:#fff; }
+    .webdev-courses-grid { display:flex; flex-wrap:wrap; gap:24px 0; }
+    .webdev-courses-grid .col-lg-4 { display:flex; }
+    @keyframes searchPulse { 0%{box-shadow:0 0 0 0 rgba(245,164,37,0.7)} 70%{box-shadow:0 0 0 10px rgba(245,164,37,0)} 100%{box-shadow:0 0 0 0 rgba(245,164,37,0)} }
+    .search-highlight { outline:2px solid #f5a425; animation: searchPulse 1s ease-in-out 3; border-radius:8px; }
+    .section-title { font-size:1.6rem; font-weight:700; margin-bottom:18px; color:#222; }
+    .featured-badge { position:absolute; top:12px; left:12px; background:#6f42c1; color:#fff; font-size:12px; font-weight:700; padding:4px 12px; border-radius:12px; z-index:2; }
+  </style>
+</head>
+<body>
+  <header class="main-header clearfix" role="header">
+    <div class="logo">
+      <a href="index.html">
+        <svg class="header-logo" width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right:10px;vertical-align:middle;"><circle cx="32" cy="32" r="28" stroke="#f5a425" stroke-width="4" fill="none"/><text x="32" y="38" text-anchor="middle" font-size="28" font-family="Montserrat, Arial, sans-serif" fill="#f5a425" font-weight="bold">E</text><path d="M16 48 Q32 40 48 48" stroke="#f5a425" stroke-width="3" fill="none"/><path d="M20 48 Q32 44 44 48" stroke="#f5a425" stroke-width="3" fill="none"/></svg>
+        <em>ENRICH</em>
+      </a>
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li class="has-submenu"><a href="index.html#section4">Courses</a>
+          <ul class="sub-menu">
+            <li><a href="webdev.html">Programming</a></li>
+            <li><a href="data.html">Data Science</a></li>
+            <li><a href="ai.html">AI/ML</a></li>
+            <li><a href="cyber.html">Cybersecurity</a></li>
+            <li><a href="digital.html">Digital Marketing</a></li>
+            <li><a href="graphic.html">Graphic Design</a></li>
+            <li><a href="manage.html">Management</a></li>
+            <li><a href="comm.html">Communication</a></li>
+            <li><a href="ui.html">UI/UX Design</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu"><a href="about.html">About Us</a></li>
+        <li><a href="index.html#section6">Contact</a></li>
+        <li><a href="#" title="Search"><i class="fa fa-search"></i></a></li>
+        <li><a href="#" title="Cart"><i class="fa fa-shopping-cart"></i></a></li>
+        <li><a href="#" class="login-btn">Login/Signup</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="webdev-main-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="webdev-sidebar">
+            <h5>Filter by</h5>
+            <form id="sidebar-filters">
+              <div class="mb-3">
+                <label for="sidebar-category" class="form-label">Category</label>
+                <select class="form-control" id="sidebar-category">
+                  <option>Data Science</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="sidebar-level" class="form-label">Level</label>
+                <select class="form-control" id="sidebar-level">
+                  <option>All</option>
+                  <option>Beginner</option>
+                  <option>Intermediate</option>
+                  <option>Advanced</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="sidebar-pricing" class="form-label">Pricing</label>
+                <select class="form-control" id="sidebar-pricing">
+                  <option>All</option>
+                  <option>Free</option>
+                  <option>Paid</option>
+                </select>
+              </div>
+            </form>
+            <hr>
+            <h5>Subcategories</h5>
+            <ul id="sidebar-subcategories"></ul>
+          </div>
+        </div>
+
+        <div class="col-lg-9">
+          <div class="webdev-category-bar mb-3" id="category-pills">
+            <button class="webdev-category-pill" data-category="All">All</button>
+            <button class="webdev-category-pill" data-category="JavaScript">JavaScript</button>
+            <button class="webdev-category-pill" data-category="Python">Python</button>
+            <button class="webdev-category-pill" data-category="Java">Java</button>
+            <button class="webdev-category-pill" data-category="React">React</button>
+            <button class="webdev-category-pill" data-category="Angular">Angular</button>
+            <button class="webdev-category-pill" data-category="Digital Marketing">Digital Marketing</button>
+            <button class="webdev-category-pill" data-category="Graphic Design">Graphic Design</button>
+            <button class="webdev-category-pill" data-category="Management">Management</button>
+            <button class="webdev-category-pill" data-category="Communication">Communication</button>
+            <button class="webdev-category-pill" data-category="UI/UX Design">UI/UX Design</button>
+            <button class="webdev-category-pill" data-category="Cybersecurity">Cybersecurity</button>
+            <button class="webdev-category-pill" data-category="AI/ML">AI/ML</button>
+            <button class="webdev-category-pill active" data-category="Data Science">Data Science</button>
+          </div>
+
+          <div class="webdev-filter-bar mb-4">
+            <input type="text" id="top-search" class="form-control" placeholder="Search for anything...">
+            <select id="top-sort" class="form-control custom-select">
+              <option value="relevance">Sort by</option>
+              <option value="rating-desc">Highest Rated</option>
+              <option value="newest">Newest</option>
+              <option value="price-asc">Lowest Price</option>
+              <option value="price-desc">Highest Price</option>
+            </select>
+            <select id="top-level" class="form-control custom-select">
+              <option value="All">Level</option>
+              <option value="Beginner">Beginner</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Advanced">Advanced</option>
+            </select>
+            <select id="top-pricing" class="form-control custom-select">
+              <option value="All">Pricing</option>
+              <option value="Free">Free</option>
+              <option value="Paid">Paid</option>
+            </select>
+          </div>
+
+          <div class="mb-5" id="category-courses-section">
+            <div class="section-title" id="category-courses-title">Data Science Courses</div>
+            <div class="row webdev-courses-grid" id="category-courses-grid"></div>
+          </div>
+
+          <div class="mb-5">
+            <div class="section-title">Trending Courses</div>
+            <div class="row webdev-courses-grid" id="trending-courses-grid"></div>
+          </div>
+
+          <div class="mb-5">
+            <div class="section-title">Featured Courses</div>
+            <div class="row webdev-courses-grid" id="featured-courses-grid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+          <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <p>© 2025 Enrich. All rights reserved.</p>
+                <div class="footer-links">
+                  <a href="#">Privacy Policy</a> | 
+                  <a href="#">Terms</a> | 
+                  <a href="#">Contact</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/video.js"></script>
+  <script src="assets/js/slick-slider.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/auth-cart.js"></script>
+  <script src="assets/js/site-search.js"></script>
+  <script src="assets/js/category-page.js"></script>
+  <script>
+    $(function(){
+      window.initCategoryPage({
+        categoryName: 'Data Science',
+        subcategories: ['Python DS','Statistics','Data Visualization','Big Data','Time Series']
+      });
+    });
+  </script>
+</body>
+</html>
+
+

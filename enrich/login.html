@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Login - Enrich eLearning Platform</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .auth-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .auth-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      overflow: hidden;
+      max-width: 1000px;
+      width: 100%;
+      display: flex;
+      min-height: 600px;
+    }
+    .auth-illustration {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      position: relative;
+    }
+    .illustration-circle {
+      width: 300px;
+      height: 300px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .illustration-content {
+      text-align: center;
+      color: #333;
+    }
+    .illustration-icon {
+      font-size: 48px;
+      color: #f5a425;
+      margin-bottom: 20px;
+    }
+    .illustration-text {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+    }
+    .auth-form {
+      flex: 1;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .auth-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .auth-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .auth-subtitle {
+      color: #666;
+      font-size: 16px;
+    }
+    .form-group {
+      margin-bottom: 25px;
+    }
+    .form-control {
+      border: 2px solid #e1e5e9;
+      border-radius: 10px;
+      padding: 15px 20px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+    .form-control:focus {
+      border-color: #f5a425;
+      box-shadow: 0 0 0 0.2rem rgba(245, 164, 37, 0.25);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #f5a425 0%, #f7931e 100%);
+      border: none;
+      border-radius: 10px;
+      padding: 15px 30px;
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(245, 164, 37, 0.3);
+    }
+    .social-divider {
+      text-align: center;
+      margin: 30px 0;
+      position: relative;
+    }
+    .social-divider::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: #e1e5e9;
+    }
+    .social-divider span {
+      background: white;
+      padding: 0 20px;
+      color: #666;
+      font-size: 14px;
+    }
+    .social-buttons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    .btn-social {
+      flex: 1;
+      border: 2px solid #e1e5e9;
+      border-radius: 10px;
+      padding: 12px;
+      background: white;
+      color: #333;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .btn-social:hover {
+      border-color: #f5a425;
+      transform: translateY(-2px);
+    }
+    .forgot-password {
+      text-align: right;
+      margin-bottom: 30px;
+    }
+    .forgot-password a {
+      color: #f5a425;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .signup-link {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+    }
+    .signup-link a {
+      color: #f5a425;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .logo-section {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .logo-section h2 {
+      color: #f5a425;
+      font-weight: 700;
+      margin: 0;
+    }
+    @media (max-width: 768px) {
+      .auth-card {
+        flex-direction: column;
+        min-height: auto;
+      }
+      .auth-illustration {
+        padding: 30px;
+      }
+      .illustration-circle {
+        width: 200px;
+        height: 200px;
+      }
+      .auth-form {
+        padding: 40px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-illustration">
+        <div class="illustration-circle">
+          <div class="illustration-content">
+            <div class="illustration-icon">
+              <i class="fa fa-user"></i>
+            </div>
+            <div class="illustration-text">Welcome Back</div>
+            <div style="font-size: 14px; color: #666; margin-top: 10px;">
+              Continue your learning journey
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="auth-form">
+        <div class="logo-section">
+          <h2>ENRICH</h2>
+        </div>
+        
+        <div class="auth-header">
+          <h1 class="auth-title">Log in to your account</h1>
+          <p class="auth-subtitle">Welcome back! Please enter your details</p>
+        </div>
+        
+        <form id="loginForm">
+          <div class="form-group">
+            <input type="email" class="form-control" id="email" placeholder="Email" required>
+          </div>
+          
+          <div class="form-group">
+            <input type="password" class="form-control" id="password" placeholder="Password" required>
+          </div>
+          
+          <div class="forgot-password">
+            <a href="#">Forgot password?</a>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">
+            <i class="fa fa-sign-in"></i> Log in
+          </button>
+        </form>
+        
+        <div class="social-divider">
+          <span>Or continue with</span>
+        </div>
+        
+        <div class="social-buttons">
+          <button class="btn btn-social">
+            <i class="fa fa-google" style="color: #DB4437;"></i>
+            Google
+          </button>
+          <button class="btn btn-social">
+            <i class="fa fa-facebook" style="color: #4267B2;"></i>
+            Facebook
+          </button>
+          <button class="btn btn-social">
+            <i class="fa fa-apple"></i>
+            Apple
+          </button>
+        </div>
+        
+        <div class="signup-link">
+          Don't have an account? <a href="signup.html">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/auth-cart.js"></script>
+  <script>
+    $(function(){
+      const AC = window.EnrichAuthCart;
+      AC.updateNavAuth();
+      
+      $('#loginForm').on('submit', function(e){
+        e.preventDefault();
+        
+        const email = $('#email').val().trim();
+        const password = $('#password').val();
+        
+        if(!email || !password){
+          alert('Please fill in all fields');
+          return;
+        }
+        
+        // Get stored user data (in real app, this would be server validation)
+        const storedUser = AC.getUser();
+        
+        if(storedUser && storedUser.username === email && storedUser.password === password){
+          // Login successful
+          AC.setUser(storedUser);
+          
+          // Redirect to stored page or default
+          const backPage = sessionStorage.getItem('ENRICH_BACK');
+          if(backPage){
+            sessionStorage.removeItem('ENRICH_BACK');
+            window.location.href = backPage;
+          } else {
+            window.location.href = 'index.html';
+          }
+        } else {
+          alert('Invalid email or password. Please try again.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+

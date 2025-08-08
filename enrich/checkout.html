@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Checkout | Enrich</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/templatemo-grad-school.css">
+  <style> body{background:#f8f9fa;} .container{margin-top:110px;} .card{border-radius:8px;} .order-item{display:flex;align-items:center;margin-bottom:10px} .order-item img{width:70px;height:50px;object-fit:cover;border-radius:6px;margin-right:10px}</style>
+</head>
+<body>
+  <header class="main-header clearfix" role="header">
+    <div class="logo"><a href="index.html"><em>ENRICH</em></a></div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="index.html#section4">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#section6">Contact</a></li>
+        <li><a href="#" title="Search"><i class="fa fa-search"></i></a></li>
+        <li><a href="#" title="Cart"><i class="fa fa-shopping-cart"></i></a></li>
+        <li><a href="login.html" class="login-btn"><i class="fa fa-user" title="Login/Signup"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item"><a href="cart.html">Cart</a></li><li class="breadcrumb-item active">Checkout</li></ol></nav>
+    <div class="row">
+      <div class="col-lg-7 mb-3">
+        <div class="card p-3">
+           <h5>Payment Details</h5>
+          <form id="checkout-form">
+            <div class="form-group">
+              <label>Payment Method</label>
+              <select id="pay-method" class="form-control">
+                <option value="card">Credit/Debit Card</option>
+                <option value="upi">UPI</option>
+                <option value="netbanking">Netbanking</option>
+                <option value="cod">Cash on Delivery (disabled)</option>
+              </select>
+            </div>
+            <div id="pay-card">
+              <div class="form-group"><label>Name on Card</label><input id="name" class="form-control"></div>
+              <div class="form-group"><label>Card Number</label><input id="card" class="form-control" maxlength="19" placeholder="xxxx xxxx xxxx xxxx"></div>
+              <div class="form-row">
+                <div class="form-group col-md-6"><label>Expiry (MM/YY)</label><input id="exp" class="form-control" placeholder="MM/YY"></div>
+                <div class="form-group col-md-6"><label>CVV</label><input id="cvv" class="form-control" maxlength="4"></div>
+              </div>
+            </div>
+            <div id="pay-upi" style="display:none;">
+              <div class="form-group"><label>UPI ID</label><input id="upi" class="form-control" placeholder="name@bank"></div>
+            </div>
+            <div id="pay-net" style="display:none;">
+              <div class="form-group"><label>Bank</label><select id="bank" class="form-control"><option>SBI</option><option>ICICI</option><option>HDFC</option><option>Axis</option></select></div>
+              <div class="form-group"><label>Username</label><input id="nb-user" class="form-control"></div>
+              <div class="form-group"><label>Password</label><input id="nb-pass" type="password" class="form-control"></div>
+            </div>
+            <div class="form-group"><label>Promo Code</label><div class="input-group"><input id="promo" class="form-control"><div class="input-group-append"><button id="apply-promo" class="btn btn-outline-secondary" type="button">Apply</button></div></div><small id="promo-msg" class="form-text text-muted"></small></div>
+            <button class="btn btn-primary" type="submit">Pay Now</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-5 mb-3">
+         <div class="card p-3">
+          <h5>Order Summary</h5>
+          <div id="order-items"></div>
+          <hr>
+          <div class="d-flex justify-content-between"><span>Subtotal</span><span id="subtotal">₹0</span></div>
+          <div class="d-flex justify-content-between"><span>Discount</span><span id="discount">- ₹0</span></div>
+          <div class="d-flex justify-content-between"><strong>Total</strong><strong id="total">₹0</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p>© 2025 Enrich. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms</a> | 
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/site-search.js"></script>
+  <script src="assets/js/auth-cart.js"></script>
+  <script>
+    $(function(){
+      const AC = window.EnrichAuthCart;
+      AC.updateNavAuth();
+      const user = AC.getUser();
+      if(!user){ sessionStorage.setItem('ENRICH_BACK','checkout.html'); window.location.href = 'login.html'; return; }
+      // Use specifically selected course if present
+      let items = [];
+      const selected = JSON.parse(sessionStorage.getItem('ENRICH_SELECTED')||'null');
+      if(selected){ items = [selected]; }
+      else { items = AC.getCart(); }
+      const $list = $('#order-items');
+      if(!items.length){ $list.html('<p>No items in cart.</p>'); }
+      else {
+        $list.html(items.map(i=>`<div class="order-item"><img src="${i.image || 'assets/images/courses-01.jpg'}" alt="${i.title}"><div class="flex-grow-1">${i.title}</div><div>${i.isFree?'Free':'₹'+(i.price||0).toLocaleString()}</div></div>`).join(''));
+      }
+      function recalc(){
+        const subtotal = items.reduce((s,i)=> s + (i.isFree?0:(i.price||0)), 0);
+        const promo = ($('#promo').val()||'').trim().toUpperCase();
+        let discount = 0;
+        if(promo==='SAVE10') discount = Math.floor(subtotal*0.10);
+        $('#subtotal').text('₹'+subtotal.toLocaleString());
+        $('#discount').text('- ₹'+discount.toLocaleString());
+        $('#total').text('₹'+(subtotal - discount).toLocaleString());
+        return { subtotal, discount, total: subtotal-discount };
+      }
+      recalc();
+      $('#apply-promo').on('click', function(){ const {discount} = recalc(); $('#promo-msg').text(discount>0?'Promo applied!':'Invalid code (try SAVE10)'); });
+      $('#card').on('input', function(){ this.value = this.value.replace(/\D/g,'').replace(/(.{4})/g,'$1 ').trim(); });
+      $('#exp').on('input', function(){ this.value = this.value.replace(/[^\d/]/g,'').slice(0,5); });
+      $('#cvv').on('input', function(){ this.value = this.value.replace(/\D/g,'').slice(0,4); });
+      $('#pay-method').on('change', function(){
+        const v = this.value;
+        $('#pay-card').toggle(v==='card');
+        $('#pay-upi').toggle(v==='upi');
+        $('#pay-net').toggle(v==='netbanking');
+      });
+
+      $('#checkout-form').on('submit', function(e){
+        e.preventDefault();
+        const { total } = recalc();
+        const mode = $('#pay-method').val();
+        if(mode==='card'){
+          if(!$('#name').val().trim()) return alert('Enter name on card');
+          if($('#card').val().replace(/\s/g,'').length<16) return alert('Invalid card number');
+          if($('#exp').val().length<4) return alert('Invalid expiry');
+          if($('#cvv').val().length<3) return alert('Invalid CVV');
+        } else if(mode==='upi'){
+          const upi = ($('#upi').val()||'').trim();
+          if(!/^[\w\.\-]+@[\w\-]+$/.test(upi)) return alert('Enter a valid UPI ID');
+        } else if(mode==='netbanking'){
+          if(!$('#nb-user').val().trim() || !$('#nb-pass').val().trim()) return alert('Enter netbanking credentials');
+        } else {
+          return alert('Select a valid payment method');
+        }
+        // Persist order details for review
+        sessionStorage.setItem('ENRICH_ORDER', JSON.stringify({ items, total }));
+        sessionStorage.removeItem('ENRICH_SELECTED');
+        window.location.href = 'review.html';
+      });
+    });
+  </script>
+</body>
+</html>
+
+
