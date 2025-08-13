@@ -1331,8 +1331,37 @@ https://templatemo.com/tm-557-grad-school
         //according to loftblog tut
         $('.nav li:first').addClass('active');
 
-        // On page load, show only web development cards and its view all button
+        // Mobile menu functionality
         $(document).ready(function() {
+          // Mobile menu toggle
+          $('.menu-link').on('click', function(e) {
+            e.preventDefault();
+            $('#menu').toggleClass('active');
+            $(this).toggleClass('active');
+          });
+
+          // Close menu when clicking outside
+          $(document).on('click', function(e) {
+            if (!$(e.target).closest('.main-header').length) {
+              $('#menu').removeClass('active');
+              $('.menu-link').removeClass('active');
+            }
+          });
+
+          // Mobile submenu toggle
+          $('.has-submenu > a').on('click', function(e) {
+            if ($(window).width() <= 950) {
+              e.preventDefault();
+              $(this).parent().toggleClass('active');
+            }
+          });
+
+          // Prevent closing when clicking inside menu
+          $('#menu').on('click', function(e) {
+            e.stopPropagation();
+          });
+
+          // On page load, show only web development cards and its view all button
           $('.col-lg-3').hide();
           $('.col-lg-3[data-category="web-development"]').show();
           $('.view-all-btn').hide();
