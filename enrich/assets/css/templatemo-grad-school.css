@@ -12,7 +12,7 @@ https://templatemo.com/tm-557-grad-school
 body {
     font-family: 'Montserrat', sans-serif;
 }
-
+    
 /* Basic */
 
 a {
@@ -846,8 +846,7 @@ section.why-us {
   display: block;
   margin-bottom: 0.75em;
 }
-#tabs ul .ui-tabs-active {
-}
+/* Removed empty ruleset for #tabs ul .ui-tabs-active */
 #tabs ul .ui-tabs-active a {
   color: #f5a425;
 }
@@ -1123,7 +1122,6 @@ section.courses .item .down-content img {
 
 section.courses .item .down-content .text-button-pay {
     float: right;
-    display: inline-block;
     margin-top: -30px;
 }
 
@@ -1133,11 +1131,10 @@ section.courses .item .down-content .text-button-pay a {
 }
 
 section.courses .item .down-content .text-button-free {
+section.courses .item .down-content .text-button-free {
     float: right;
-    display: inline-block;
     margin-top: -30px;
 }
-
 section.courses .item .down-content .text-button-free a {
     color: #7a7a7a;
     font-size: 13px;
@@ -1300,6 +1297,7 @@ section.video .left-content .main-button {
   position: fixed;
   outline: none !important;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .mfp-container {
@@ -1411,6 +1409,7 @@ button.mfp-arrow {
   cursor: pointer;
   background: transparent;
   border: 0;
+  appearance: none;
   -webkit-appearance: none;
   display: block;
   outline: none;
@@ -2155,4 +2154,5 @@ footer p a:hover {
     padding: 10px 20px;
     font-size: 12px;
   }
+}
 }
