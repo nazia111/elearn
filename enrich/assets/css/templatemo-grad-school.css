@@ -8,11 +8,11 @@ https://templatemo.com/tm-557-grad-school
 
 
 @import url(fontawesome.css);
-@import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900");
+@import url("<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">");
 body {
     font-family: 'Montserrat', sans-serif;
 }
-    
+
 /* Basic */
 
 a {
@@ -80,127 +80,17 @@ p {
     outline: none;
 }
 
-@media screen and (max-width: 768px) {
-    .main-button a {
-        font-size: 12px;
-        padding: 10px 15px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .main-button a {
-        font-size: 11px;
-        padding: 8px 12px;
-    }
-    
-    .main-header .logo a {
-        font-size: 20px;
-    }
-    
-    .header-logo {
-        height: 24px;
-    }
-    
-    .video-overlay .caption h2 {
-        font-size: 20px;
-    }
-    
-    .video-overlay .caption h6 {
-        font-size: 12px;
-    }
-    
-    /* Make course cards full width on very small screens */
-    .col-lg-3.col-md-6[data-category] {
-        width: 100%;
-        float: none;
-    }
-    
-    .course-card .course-title-overlay h5 {
-        font-size: 13px;
-    }
-    
-    .category-filters .filter-btn {
-        font-size: 11px;
-        padding: 5px 8px;
-        margin: 2px;
-    }
-    
-    .counter .days,
-    .counter .hours,
-    .counter .minutes,
-    .counter .seconds {
-        width: 50px;
-        height: 50px;
-        margin-right: 5px;
-    }
-    
-    .counter .days .value,
-    .counter .hours .value,
-    .counter .minutes .value,
-    .counter .seconds .value {
-        font-size: 18px;
-        line-height: 25px;
-    }
-    
-    .counter span {
-        font-size: 10px;
-    }
-    
-    .section-heading h2 {
-        font-size: 14px;
-        padding: 10px 12px;
-    }
-    
-    /* Improve form display on small screens */
-    .section.coming-soon .right-content {
-        padding: 15px;
-    }
-    
-    .section.coming-soon form input {
-        margin-bottom: 10px;
-    }
-}
-
 a.menu-link { display: none; }
-
-/* Landscape orientation for mobile devices */
-@media screen and (max-width: 850px) and (orientation: landscape) {
-  .main-banner {
-    min-height: 280px;
-  }
-  
-  .video-overlay .caption {
-    padding-top: 80px;
-  }
-  
-  .video-overlay .caption h2 {
-    font-size: 22px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-  }
-  
-  .video-overlay .caption h6 {
-    font-size: 12px;
-  }
-  
-  .main-button {
-    margin-top: 10px;
-  }
-}
 
 @media screen and (max-width: 950px) {
   a.menu-link {
     float: right;
     display: block;
-    font-size: 28px;
+    font-size: 36px;
     color: #fff;
-    padding-right: 20px;
+    padding-right: 30px;
     padding-top: 15px;
-    cursor: pointer;
-    z-index: 1001;
-    position: relative;
   }
-  
   nav[role="navigation"] {
     clear: both;
     -webkit-transition: all 0.3s ease-out;
@@ -208,182 +98,52 @@ a.menu-link { display: none; }
     -ms-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
-    position: fixed;
-    top: 80px;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: rgba(22,34,57,0.98);
-    border-top: 1px solid rgba(255,255,255,0.1);
   }
-  
   .js nav[role="navigation"] {
     overflow: hidden;
     max-height: 0;
   }
-  
   nav[role="navigation"].active {
-    max-height: calc(100vh - 80px);
-    height: auto;
-    overflow-y: auto;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    max-height: 20em;
+    height: 20em;
+    overflow-y: scroll;
   }
-  
   nav[role="navigation"] ul {
     top: 0;
     width: 100%;
     position: relative;
     margin: 0;
     padding: 0;
-    background-color: transparent;
+    border-top: 1px solid rgba(250,250,250,0.25);
+    background-color: rgba(22,34,57,0.99);
   }
-  
-  nav[role="navigation"] li {
-    display: block;
-    margin: 0;
-    border-bottom: 1px solid rgba(250,250,250,0.1);
-  }
-  
   nav[role="navigation"] li a {
     display: block;
-    padding: 15px 20px;
-    text-align: left;
+    padding: 15px 0px;
+    border-bottom: 1px solid rgba(250,250,250,0.25);
+    text-align: center;
     color: #fff;
-    font-size: 16px;
+    font-size: 13px;
     text-transform: uppercase;
-    font-weight: 600;
-    line-height: 1.4;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  nav[role="navigation"] li:hover a,
+  nav[role="navigation"] li.active a {
+      color: #f5a425;
   }
   
-  nav[role="navigation"] li a:hover {
-    background-color: rgba(245,164,37,0.1);
-    color: #f5a425;
-  }
-  
-  /* Mobile submenu improvements */
-  nav[role="navigation"] .has-submenu {
-    position: relative;
-  }
-  
-  nav[role="navigation"] .has-submenu > a {
-    position: relative;
-    padding-right: 40px;
-  }
-  
-  nav[role="navigation"] .has-submenu > a:after {
-    content: '\f107';
-    font-family: "FontAwesome";
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: transform 0.3s ease;
-  }
-  
-  nav[role="navigation"] .has-submenu.active > a:after {
-    transform: translateY(-50%) rotate(180deg);
-  }
-  
-  nav[role="navigation"] .has-submenu .sub-menu {
-    position: static;
-    display: none;
-    width: 100%;
-    box-shadow: none;
-    background-color: rgba(22,34,57,0.9);
-    border: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav[role="navigation"] .has-submenu.active .sub-menu {
-    display: block;
-  }
-  
-  nav[role="navigation"] .sub-menu li {
-    border-bottom: 1px solid rgba(250,250,250,0.05);
-  }
-  
-  nav[role="navigation"] .sub-menu li a {
-    padding: 12px 30px;
-    font-size: 14px;
-    background-color: rgba(245,164,37,0.05);
-    border-bottom: none;
-  }
-  
-  nav[role="navigation"] .sub-menu li a:hover {
-    background-color: rgba(245,164,37,0.1);
-  }
-  
-  /* Mobile-specific improvements */
-  @media screen and (max-width: 768px) {
-    .main-header {
-      height: 70px;
+  @media screen and (min-width: 951px) {
+    .js nav[role="navigation"] {
+      max-height: none;
     }
-    
-    .main-header .logo {
-      line-height: 70px;
-      padding-left: 15px;
+
+    nav[role="navigation"] li {
+      display: inline-block;
+      margin: 0 0.25em;
     }
-    
-    .main-header .logo a {
-      font-size: 24px;
-    }
-    
-    .header-logo {
-      height: 28px;
-    }
-    
-    nav[role="navigation"] {
-      top: 70px;
-    }
-    
-    nav[role="navigation"].active {
-      max-height: calc(100vh - 70px);
-    }
-    
     nav[role="navigation"] li a {
-      font-size: 15px;
-      padding: 12px 15px;
-    }
-    
-    nav[role="navigation"] .sub-menu li a {
-      font-size: 13px;
-      padding: 10px 25px;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .main-header .logo a {
-      font-size: 20px;
-    }
-    
-    .header-logo {
-      height: 24px;
-    }
-    
-    nav[role="navigation"] li a {
-      font-size: 14px;
-      padding: 10px 12px;
-    }
-    
-    nav[role="navigation"] .sub-menu li a {
-      font-size: 12px;
-      padding: 8px 20px;
-    }
-  }
-  
-  /* Landscape orientation fixes */
-  @media screen and (max-width: 850px) and (orientation: landscape) {
-    nav[role="navigation"].active {
-      max-height: calc(100vh - 70px);
-    }
-    
-    nav[role="navigation"] li a {
-      padding: 8px 15px;
-      font-size: 13px;
+      border: 0;
     }
   }
 }
@@ -392,156 +152,15 @@ a.menu-link { display: none; }
 
 @media screen and (max-width: 1050px) {
   .main-header .logo {
-      padding-left: 20px!important;
+      padding-left: 30px!important;
   }
 
   .main-menu {
-      padding-right: 20px!important;
+      padding-right: 30px!important;
   }
 
   .main-menu li {
       margin-left: 5px!important;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .main-header {
-    height: 70px;
-  }
-  
-  .main-header .logo {
-    line-height: 70px;
-    padding-left: 15px!important;
-  }
-  
-  .main-header .logo a {
-    font-size: 24px;
-  }
-  
-  .header-logo {
-    height: 28px;
-  }
-  
-  .section-heading h2 {
-    font-size: 16px;
-    padding: 12px 15px;
-    margin-top: 60px;
-  }
-  
-  .features .content-hide p {
-    font-size: 12px;
-  }
-  
-  .features-post h4 {
-    font-size: 16px;
-  }
-  
-  .features {
-    padding-bottom: 30px;
-  }
-  
-  .features .features-post {
-    margin-bottom: 15px;
-  }
-  
-  .section.courses {
-    padding-bottom: 30px;
-  }
-  
-  .section.courses .course-card {
-    margin-bottom: 20px;
-  }
-  
-  /* Make course cards display better on mobile */
-  .col-lg-3.col-md-6[data-category] {
-    width: 50%;
-    float: left;
-  }
-  
-  .course-card .course-image img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .course-card .course-title-overlay h5 {
-    font-size: 14px;
-  }
-  
-  .course-card .course-content .course-meta,
-  .course-card .course-content .course-price {
-    font-size: 12px;
-  }
-  
-  .course-card .course-overlay .course-actions .btn {
-    font-size: 11px;
-    padding: 5px 8px;
-    margin: 2px;
-  }
-  
-  .category-filters .filter-btn {
-    font-size: 12px;
-    padding: 6px 10px;
-    margin: 3px;
-  }
-  
-  .video-overlay .caption h6 {
-    font-size: 14px;
-  }
-  
-  .video-overlay .caption h2 {
-    font-size: 24px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .section.why-us #tabs ul li {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .section.why-us #tabs ul {
-    margin-bottom: 20px;
-  }
-  
-  .section.coming-soon .right-content {
-    margin-top: 30px;
-  }
-  
-  .section.coming-soon h4 {
-    font-size: 18px;
-  }
-  
-  .counter .days,
-  .counter .hours,
-  .counter .minutes,
-  .counter .seconds {
-    width: 60px;
-    height: 60px;
-    margin-right: 10px;
-  }
-  
-  .counter .days .value,
-  .counter .hours .value,
-  .counter .minutes .value,
-  .counter .seconds .value {
-    font-size: 20px;
-    line-height: 30px;
-  }
-  
-  .counter span {
-    font-size: 12px;
-  }
-  
-  .section.contact {
-    padding-bottom: 30px;
-  }
-  
-  .section.contact form {
-    padding: 20px;
-  }
-  
-  .section.contact input {
-    margin-bottom: 15px;
   }
 }
 
@@ -961,7 +580,8 @@ section.why-us {
   display: block;
   margin-bottom: 0.75em;
 }
-/* Removed empty ruleset for #tabs ul .ui-tabs-active */
+#tabs ul .ui-tabs-active {
+}
 #tabs ul .ui-tabs-active a {
   color: #f5a425;
 }
@@ -1237,6 +857,7 @@ section.courses .item .down-content img {
 
 section.courses .item .down-content .text-button-pay {
     float: right;
+    display: inline-block;
     margin-top: -30px;
 }
 
@@ -1246,10 +867,11 @@ section.courses .item .down-content .text-button-pay a {
 }
 
 section.courses .item .down-content .text-button-free {
-section.courses .item .down-content .text-button-free {
     float: right;
+    display: inline-block;
     margin-top: -30px;
 }
+
 section.courses .item .down-content .text-button-free a {
     color: #7a7a7a;
     font-size: 13px;
@@ -1412,7 +1034,6 @@ section.video .left-content .main-button {
   position: fixed;
   outline: none !important;
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
 }
 
 .mfp-container {
@@ -1524,7 +1145,6 @@ button.mfp-arrow {
   cursor: pointer;
   background: transparent;
   border: 0;
-  appearance: none;
   -webkit-appearance: none;
   display: block;
   outline: none;
@@ -2269,5 +1889,4 @@ footer p a:hover {
     padding: 10px 20px;
     font-size: 12px;
   }
-}
 }
